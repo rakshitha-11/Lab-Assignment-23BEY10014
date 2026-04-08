@@ -1,0 +1,13 @@
+<input type="text" onkeyup="show(this.value)">
+<div id="result"></div>
+
+<script>
+function show(str) {
+    let xhttp = new XMLHttpRequest();
+    xhttp.onload = function() {
+        document.getElementById("result").innerHTML = this.responseText;
+    }
+    xhttp.open("GET", "data.php?q="+str);
+    xhttp.send();
+}
+</script>
